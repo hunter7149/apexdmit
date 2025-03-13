@@ -19,6 +19,8 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
+      transition: Transition.circularReveal,
+      transitionDuration: Duration(seconds: 2),
     ),
     GetPage(
       name: _Paths.SPLASHSCREEN,
@@ -29,6 +31,7 @@ class AppPages {
       name: _Paths.LOGINSCREEN,
       page: () => const LoginscreenView(),
       binding: LoginscreenBinding(),
+      transition: Transition.zoom
     ),
   ];
 }

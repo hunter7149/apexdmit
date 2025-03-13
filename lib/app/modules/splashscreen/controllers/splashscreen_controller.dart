@@ -3,8 +3,12 @@ import 'package:apexdmit/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SplashscreenController extends GetxController {
+      String login_token="";
+setLoginToken(){
+  login_token=Pref.readData(key: Pref.login_token)??"na";
+  print(login_token);
+}
   checkLoginStatus() async {
-    String login_token = Pref.readData(key: Pref.login_token) ?? "na";
 
     if (login_token.toLowerCase()=="na") {
       Get.offNamed(Routes.LOGINSCREEN);
@@ -16,6 +20,8 @@ class SplashscreenController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    setLoginToken();
+
   }
 
   @override

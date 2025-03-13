@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class LoginscreenController extends GetxController {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-  RxBool isPassObsecure = false.obs;
+  RxBool isPassObsecure = true.obs;
   isOldPassObsecureUpdater() {
     isPassObsecure.value = !isPassObsecure.value;
     update();
