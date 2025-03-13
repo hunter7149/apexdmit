@@ -15,9 +15,18 @@ class ComsRepo extends Providers {
           map: map);
    Future<dynamic> requestPurchaseList({required int page}) async {
    return  await tokenBaseApi(
-      endPoint: "auth/interview/material-purchase/",
+      endPoint: "${AppUrl.purchaseList}/",
       method: Method.GET, // Ensure the API supports POST for fetching data
       map: {"page": page},
+    );
+  }
+     Future<dynamic> addToPurchaseList({required List<Map<String, dynamic>> item}) async {
+   return  await tokenBaseApi(
+      endPoint: AppUrl.purchaseList,
+      method: Method.POST, // Ensure the API supports POST for fetching data
+      map: {
+        "material_purchase":item
+      },
     );
   }
 }

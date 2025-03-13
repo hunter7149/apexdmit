@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class SplashscreenController extends GetxController {
   checkLoginStatus() async {
-    String login_token = await Pref.readData(key: Pref.login_token) ?? "na";
+    String login_token = Pref.readData(key: Pref.login_token) ?? "na";
 
     if (login_token.toLowerCase()=="na") {
       Get.offNamed(Routes.LOGINSCREEN);

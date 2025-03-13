@@ -74,7 +74,7 @@ class ApiService extends GetxService {
     print("Response status code -> ${response.statusCode}");
 
     // Handle successful response (status code 200)
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode ==201) {
       if (response.data is List) {
         return {"data": response.data};
       } else if (response.data is Map) {
